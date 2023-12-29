@@ -40,7 +40,7 @@ var googleSatLayer = new ol.layer.Tile({
 var HaguSelatanTile = new ol.layer.Tile({
     title: "Batas Hagu Selatan",
     source: new ol.source.TileWMS({
-        url: 'http://8.215.28.229:8080/geoserver/dzikriarraiyan/wms',
+        url: 'http://localhost:8080/geoserver/AdUcation/wms',
         params: {
             'LAYERS': 'dzikriarraiyan:batas_gampong',
             'TILED': true
@@ -61,7 +61,7 @@ var createLayer = function(title, layerName) {
     return new ol.layer.Tile({
         title: title,
         source: new ol.source.TileWMS({
-            url: 'http://8.215.28.229:8080/geoserver/dzikriarraiyan/wms',
+            url: 'http://localhost:8080/geoserver/AdUcation/wms',
             params: {'LAYERS': `dzikriarraiyan:${layerName}`, 'TILED': true},
             serverType: 'geoserver',
             visible: true
