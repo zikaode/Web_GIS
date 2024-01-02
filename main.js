@@ -10,7 +10,7 @@ var map = new ol.Map({
 
 var osmTile = new ol.layer.Tile({
     title: 'Open Street Map',
-    visible: true,
+    visible: false,
     type: 'base',
     source: new ol.source.OSM()
 });
@@ -26,7 +26,7 @@ var noneTile = new ol.layer.Tile({
 var googleSatLayer = new ol.layer.Tile({
     title: 'Google Satellite',
     type: 'base',
-    visible: false,
+    visible: true,
     source: new ol.source.XYZ({
         url: 'https://mt0.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
         maxZoom: 20,
@@ -40,7 +40,7 @@ var googleSatLayer = new ol.layer.Tile({
 var HaguSelatanTile = new ol.layer.Tile({
     title: "Batas Hagu Selatan",
     source: new ol.source.TileWMS({
-        url: 'http://8.215.28.229:8080/geoserver/AdUcation/wms',
+        url: 'http://8.215.28.229:8080/geoserver/dzikriarraiyan/wms',
         params: {
             'LAYERS': 'dzikriarraiyan:batas_gampong',
             'TILED': true
@@ -61,7 +61,7 @@ var createLayer = function(title, layerName) {
     return new ol.layer.Tile({
         title: title,
         source: new ol.source.TileWMS({
-            url: 'http://8.215.28.229:8080/geoserver/AdUcation/wms',
+            url: 'http://8.215.28.229:8080/geoserver/dzikriarraiyan/wms',
             params: {'LAYERS': `dzikriarraiyan:${layerName}`, 'TILED': true},
             serverType: 'geoserver',
             visible: true
